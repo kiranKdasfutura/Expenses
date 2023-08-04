@@ -2,15 +2,17 @@ import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import "./ExpenseItem.css";
 import { useState } from "react";
+import ExpenseFilter from "./ExpenseFilter";
 function ExpenseItem(props) {
   const [expense, setExpense] = useState(props);
   const [title, setTitle] = useState(expense.title)
-  console.log(title);
-  console.log(expense);
+  // console.log(title);
+  // console.log(expense);
   const check = (id) => {
     setTitle('updated')
   };
   return (
+    
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">

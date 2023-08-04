@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ExpenceForm.css";
-function ExpenceForm() {
+function ExpenceForm(props) {
 //   const [expenseHandler, setExpenseHandler] = useState({
 //     title: "",
 //     amount: "",
@@ -50,7 +50,8 @@ const submitHandler=(event)=>{
     amount:amountHandler,
     date:new Date(dateHandler) ,
   }
-  console.log(expenseData)
+ props.onExpenseData(expenseData)
+  // console.log(expenseData)
 }
   return (
     <form onSubmit={submitHandler}>
