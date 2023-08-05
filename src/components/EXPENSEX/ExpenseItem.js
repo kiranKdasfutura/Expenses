@@ -5,28 +5,29 @@ import { useState } from "react";
 import ExpenseFilter from "./ExpenseFilter";
 function ExpenseItem(props) {
   const [expense, setExpense] = useState(props);
-  const [title, setTitle] = useState(expense.title)
+  const [title, setTitle] = useState(expense.title);
   // console.log(title);
   // console.log(expense);
   const check = (id) => {
-    setTitle('updated')
+    setTitle("updated");
   };
   return (
-    
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{title} </h2>
-        <div className="expense-item__price">${expense.amount}</div>
-        <button
-          onClick={() => {
-            check(expense.id);
-          }}
-        >
-          change this
-        </button>
-      </div>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <div className="expense-item__description">
+          <h2>{title} </h2>
+          <div className="expense-item__price">${expense.amount}</div>
+          <button
+            onClick={() => {
+              check(expense.id);
+            }}
+          >
+            change this
+          </button>
+        </div>
+      </Card>
+    </li>
   );
 }
 
